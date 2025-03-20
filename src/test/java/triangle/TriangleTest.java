@@ -33,4 +33,17 @@ class TriangleTest {
         assertEquals("Value of b is not in the range of permitted values.", Triangle.classifyTriangle(100, 0, 100));
         assertEquals("Value of c is not in the range of permitted values.", Triangle.classifyTriangle(100, 100, 202));
     }
+    @Test
+    public void testLowerBoundaryValues() {
+        assertEquals("Value of a is not in the range of permitted values.", Triangle.classifyTriangle(0, 10, 10));
+        assertEquals("Value of b is not in the range of permitted values.", Triangle.classifyTriangle(10, 0, 10));
+        assertEquals("Value of c is not in the range of permitted values.", Triangle.classifyTriangle(10, 10, 0));
+    }
+
+    @Test
+    public void testUpperBoundaryValues() {
+        assertEquals("Value of a is not in the range of permitted values.", Triangle.classifyTriangle(201, 10, 10));
+        assertEquals("Value of b is not in the range of permitted values.", Triangle.classifyTriangle(10, 201, 10));
+        assertEquals("Value of c is not in the range of permitted values.", Triangle.classifyTriangle(10, 10, 201));
+    }
 }
